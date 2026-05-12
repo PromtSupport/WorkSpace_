@@ -1,0 +1,16 @@
+{
+  "name": "WorkSpace - Joint Operations",
+  "short_name": "WorkSpace",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Secure workspace app",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzAwMCIvPjxwb2x5Z29uIHBvaW50cz0iNTAsMjAgODAsODAgMjAsODAiIGZpbGw9IiNmZmYiLz48L3N2Zz4=",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

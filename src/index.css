@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400;700&family=JetBrains+Mono:wght@300;500&family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Cinzel", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --bg: #000000;
+  --bg-secondary: #0A0A0A;
+  --accent: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.1);
+  --muted: #404040;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono { font-family: var(--font-mono); }
+.serif { font-family: var(--font-serif); }
+.display { font-family: var(--font-display); }
+
+.tech-heading { 
+  font-family: var(--font-display); 
+  text-transform: uppercase; 
+  letter-spacing: 0.3em; 
+  font-weight: 700;
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.scanline {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 9998;
+  pointer-events: none;
+  animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+  from { top: -2%; }
+  to { top: 102%; }
+}
+
+.command-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.command-panel:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.gothic-shadow {
+  box-shadow: 20px 20px 60px #000000, -20px -20px 60px #050505;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.input-gothic {
+  @apply bg-black border border-white/10 rounded-none px-6 py-4 text-sm font-mono outline-none focus:border-white/40 transition-all text-white placeholder:text-neutral-800;
+}
+
+.btn-gothic {
+  @apply flex items-center justify-center gap-3 px-8 py-4 bg-white text-black text-[10px] font-bold font-mono uppercase tracking-[0.3em] transition-all hover:bg-neutral-200 active:scale-[0.98] disabled:opacity-20;
+}
